@@ -9,7 +9,7 @@ function setQuery(evt) {
 }
 
 function getResults (query) {
-fetch(`http://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=900fa10e864f3cd466c770abd44126cd`)
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=900fa10e864f3cd466c770abd44126cd`)
      .then(weather => {
         return weather.json();
      }).then(displayResults);
