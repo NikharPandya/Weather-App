@@ -22,38 +22,46 @@
           placeholder="Search for a city ..."
         />
       </div>
-      <div class="location py-3">
-        <h1 class="city d-flex justify-content-center">City</h1>
-        <h2 class="date d-flex justify-content-center">
-          Tuesday 15 December 2020
-        </h2>
+      <div class="temp h1 px-2 py-2 text-center my-4">
+        0<span>&#176;C</span>
       </div>
     </div>
+    <div class="container"></div>
 
-    <div class="container px-2 py-2 row">
-      <div class="current col">
-        <h3 class="icon d-flex justify-content-center">
-          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" />
-        </h3>
-        <h1 class="temp d-flex justify-content-center">
-          0<span>&#176;C</span>
-        </h1>
-        <h3 class="weather d-flex justify-content-center">Sunny</h3>
-      </div>
+    <div class="location py-3">
+      <h1 class="city d-flex justify-content-center">City</h1>
+      <h2 class="date d-flex justify-content-center">
+        Tuesday 15 December 2020
+      </h2>
+    </div>
 
-      <div class="col">
-        <h1 class="feels-like d-flex justify-content-center">
-          0<span>&#176;C</span>
-        </h1>
-        <h1 class="hi-low d-flex justify-content-center">
-          13&#176;C / 16&#176;C
-        </h1>
-        <div class="sun">
-          <div class="sunrise d-flex justify-content-center">
-            <h1>Sunrise:</h1>
+    <div class="container px-2 py-2 wheat">
+      <div class="row row-cols-md-3 row-cols-1">
+        <div class="col card-ouline current text-center">
+          <div class="card-body">
+            <h2 class="feels-like">Feels Like: 0<span>&#176;C</span></h2>
+            <h2 class="hi-low">13&#176;C / 16&#176;C</h2>
+            <h2 class="weather">Sunny</h2>
           </div>
-          <div class="sunset d-flex justify-content-center">
-            <h1>Sunset:</h1>
+        </div>
+
+        <div class="col card-outline">
+          <div class="card-body text-center">
+            <h3 class="icon">
+              <img
+                src="http://openweathermap.org/img/wn/10d@4x.png"
+                alt="icon"
+                class="glass"
+              />
+            </h3>
+          </div>
+        </div>
+
+        <div class="col card-outline sun text-center">
+          <div class="card-body">
+            <h2 class="sunrise">Sunrise:</h2>
+            <h2 class="sunset">Sunset:</h2>
+            <h2 class="humidity">Humidity:</h2>
           </div>
         </div>
       </div>

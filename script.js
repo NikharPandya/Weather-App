@@ -29,7 +29,9 @@ function displayResults(weather) {
   temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
 
   let feel = document.querySelector(".feels-like");
-  feel.innerHTML = `${Math.round(weather.main.feels_like)}<span>°c</span>`;
+  feel.innerHTML = `Feels like:${Math.round(
+    weather.main.feels_like
+  )}<span>°c</span>`;
 
   let weather_el = document.querySelector(".weather");
   weather_el.innerText = weather.weather[0].main;
@@ -40,14 +42,17 @@ function displayResults(weather) {
   )}°c`;
 
   let sunrise = document.querySelector(".sun .sunrise");
-  sunrise.innerText = `${format_time(weather.sys.sunrise)}`;
+  sunrise.innerHTML = `Sunrise: ${format_time(weather.sys.sunrise)}`;
 
   let sunset = document.querySelector(".sun .sunset");
-  sunset.innerText = `${format_time(weather.sys.sunset)}`;
+  sunset.innerHTML = `Sunset: ${format_time(weather.sys.sunset)}`;
+
+  let humidity = document.querySelector(".humidity");
+  humidity.innerHTML = `Humidity: ${weather.main.humidity} %`;
 
   let weather_icon = document.querySelector(".icon");
   let idIcon = weather.weather[0].icon;
-  weather_icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${idIcon}@2x.png" alt="icon" />`;
+  weather_icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${idIcon}@4x.png" alt="icon" class="glass"/>`;
 
   dynamicBG(weather.weather[0].id);
 }
@@ -56,28 +61,23 @@ function dynamicBG(i) {
   const bg = document.querySelector("#background");
 
   if ((i >= 200) & (i < 300)) {
-    bg.classList.remove("atmosphere");
-    bg.classList.add("rain");
+    bg.className = "rain";
   } else if ((i >= 300) & (i < 600)) {
-    bg.classList.remove("atmosphere");
-    bg.classList.add("rain");
+    bg.className = "rain";
   } else if ((i >= 600) & (i < 700)) {
-    bg.classList.remove("atmosphere");
-    bg.classList.add("snow");
+    bg.className = "snow";
   } else if ((i >= 701) & (i < 800)) {
     bg.className = "atmosphere";
   } else if (i === 800) {
-    bg.classList.remove("atmosphere");
-    bg.classList.add("clear");
-  } else if (i > 801) {
-    bg.classList.remove("atmosphere");
-    bg.classList.add("cloud");
+    bg.className = "clear";
+  } else if (i >= 801) {
+    bg.className = "cloud";
   }
 }
 
 function format_time(s) {
   const dtFomrat = new Intl.DateTimeFormat("en-US", {
-    timeStyle: "long",
+    timeStyle: "short",
     timeZone: "EST",
   });
   return dtFomrat.format(new Date(s * 1e3));

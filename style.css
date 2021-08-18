@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500;600&display=swap");
+* {
+  font-family: "Source Code Pro", monospace;
+}
+
 #background {
   background-size: cover;
   background-position: top center;
@@ -23,14 +28,6 @@
   background-image: url(/BGimages/snow.jpg);
 }
 
-/* .app-wrap {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.6)
-  );
-} */
-
 input {
   padding: 10px 15px;
   border: none;
@@ -46,4 +43,25 @@ input {
 
 input:focus {
   background-color: rgba(255, 255, 255, 0.6);
+}
+
+.temp {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 4px 0 rgba(142, 142, 143, 0.37);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 4px 0 rgba(142, 142, 143, 0.37);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  border-radius: 10px;
+}
+
+.wheat {
+  color: white;
 }
