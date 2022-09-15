@@ -75,6 +75,8 @@ function dynamicBG(i) {
   }
 }
 
+
+
 function format_time(s) {
   const dtFomrat = new Intl.DateTimeFormat("en-US", {
     timeStyle: "short",
